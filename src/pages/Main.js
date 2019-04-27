@@ -230,7 +230,7 @@ class Main extends Component {
         super (props);
 
         this.state = {
-            ContractInstance: MyContract.at('0xba7ea54f771ae82c4318703d0c0b1e776a5ff289'),
+            ContractInstance: MyContract.at('0xe062497074d242fc99eb9a33481f36f34f47b138'),
             destructed: false
         };         
     }
@@ -424,16 +424,19 @@ viewNewContract = (e) => {
     render() {  
         return (
             <div>
-                { this.state.destructed ?
-                    <div>
-                    this contract is destructed.<br/>
-                    <input
+                 <input
                             type="text"
                             name="newContract"
                             placeholder="새 Contract 주소"
                             onChange={this.handleChange}
                         />
-                    <button onClick = {this.viewNewContract}>새 컨트랙트 보기</button>
+                    <button onClick = {this.viewNewContract}>새 컨트랙트 보기</button><br/>
+                    <br/><hr/><br/>
+                { this.state.destructed ?
+                    <div>
+                    파기됐거나 파기될 예정인 컨트랙트임<br/>
+                    컨트랙트의 주인이 파기한게아니면 파기되지 않았을것<br/><br/><br/>
+                   
                     </div>  : 
                 <div>
                     이 Contract의 주인 :&nbsp;
@@ -463,8 +466,8 @@ viewNewContract = (e) => {
                         placeholder="도메인(주소를 반환)"
                         onChange={this.handleChange}
                     />
-                    <button onClick={this.getAddr}>주소 찾기 시작</button>
-                    <button onClick ={this.getGotAddress}>주소 새로고침</button><br/>
+                    <button onClick={this.getAddr}>주소 찾기 시작</button><br />
+
                     이 도메인의 주소: {this.state.gotAddress}
 
                     <br/><br/>
@@ -475,8 +478,8 @@ viewNewContract = (e) => {
                         placeholder="주소(도메인을 반환)"
                         onChange={this.handleChange}
                     />
-                    <button onClick={this.getName}>도메인 찾기 시작</button>
-                    <button onClick ={this.getGotName}>도메인 새로고침</button><br/>
+                    <button onClick={this.getName}>도메인 찾기 시작</button><br />
+                   
                     이 주소의 도메인: {this.state.gotName}
                     <br /><br/>
 
@@ -486,8 +489,8 @@ viewNewContract = (e) => {
                         placeholder="도메인(도메인의 주인의 주소를 반환)"
                         onChange={this.handleChange}
                     />
-                    <button onClick={this.getNameHolder}>도메인 주인 찾기 시작</button>
-                    <button onClick ={this.getGotNameHolder}>도메인 주인 새로고침</button><br/>
+                    <button onClick={this.getNameHolder}>도메인 주인 찾기 시작</button><br />
+                
         
                     이 도메인의 주인: {this.state.gotNameHolder}
                     <br/><br/>
@@ -541,9 +544,9 @@ viewNewContract = (e) => {
                     <br/><br/>    
                 </div>
                 }
-                
+               <hr /> 
                 주소, 도메인, 도메인주인은 1초에 한번씩 자동으로 새로고침 <br/>
-                시작하기 버튼을 누르기 전에 나오는 값은 상관없음 <br />
+                시작하기 버튼을 누르기 전에 나오는 값은 상관없음(이전에 확인했던게 public변수에 저장되어있는것) <br />
 
                 destructd 창에서 새 컨트랙트 보기를 해도 새로고침하면<br/>
                 코드의 원본 주소 컨트랙트로 돌아감
