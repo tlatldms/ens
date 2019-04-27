@@ -4,7 +4,8 @@ import App from 'pages/Detail';
 
 const Root = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter
+        basename="/ens">
             <App/>
         </BrowserRouter>
     );
