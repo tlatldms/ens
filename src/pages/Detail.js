@@ -5,7 +5,7 @@ import Main from './Main';
 const Detail = () => {
     return (
         <div>
-            <Route path='/' component={Main} />
+            <Route exact path='/' component={Main} />
         </div>
     );
 };

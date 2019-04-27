@@ -2,7 +2,7 @@
   "name": "network-project",
   "version": "0.1.0",
   "private": true,
-  "homepage": "tlatldms.github.io/ens",
+  "homepage": "https://tlatldms.github.io/ens",
   "dependencies": {
     "cross-env": "^5.2.0",
     "react": "^16.8.6",
